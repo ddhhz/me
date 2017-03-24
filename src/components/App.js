@@ -7,6 +7,7 @@ import theme from './themes/default'
 injectGlobal`
   body {
     margin: 0;
+    display: block !important;
   }
 `
 
@@ -15,7 +16,7 @@ const App = ({ children }) => {
     <div>
       <Helmet
         title="Wei He"
-        titleTemplate="ARc - %s"
+        titleTemplate="%s"
         meta={[
           { name: 'description', content: 'Software Engineer ● Entrepreneur ● Learner ● Educator ● Volunteer - My initial impression was Wei was talented, driven and very smart, but more importantly, that he would be genuine and rare.' },
           { property: 'og:site_name', content: 'Wei He' },

@@ -15,7 +15,7 @@ const Html = ({ styles, assets, state, content }) => {
         {helmet.link.toComponent()}
         <style dangerouslySetInnerHTML={{ __html: styles }} />
       </head>
-      <body>
+      <body style={{display: 'none'}}>
         <main id="app" dangerouslySetInnerHTML={{ __html: content }} />
         <script dangerouslySetInnerHTML={{ __html: state }} />
         {Object.keys(assets.javascript).reverse().map((key) =>
