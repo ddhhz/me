@@ -61,7 +61,8 @@ router.use((req, res, next) => {
         </Provider>
       )
 
-      const styles = styleSheet.rules().map(rule => rule.cssText).join('\n')
+      const styles = styleSheet.rules().map(rule => rule.cssText).join('')
+        .replace(/;?\s*([:;,{}])\s*|\s*\/\*()[\S\s]+?\*\/\s*|(\s)\s+/g, '$1')
       const initialState = store.getState()
       const assets = global.webpackIsomorphicTools.assets()
       const state = `window.__INITIAL_STATE__ = ${serialize(initialState)}`

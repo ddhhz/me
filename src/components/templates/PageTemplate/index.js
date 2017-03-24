@@ -5,8 +5,8 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: #57637a url("/bg-home.jpg") no-repeat center;
+  min-height: 100vh;
+  background: #57637a url("images/bg-home.jpg") no-repeat center;
   background-size: cover;
   
   @media only screen and (max-width: 500px) {

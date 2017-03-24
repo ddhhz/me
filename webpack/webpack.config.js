@@ -59,7 +59,7 @@ if (DEBUG) {
     new WebpackIsomorphicToolsPlugin(webpackIsomorphicToolsConfig),
   ])
 } else {
-  config.output.filename = '[name].[chunkHash].js'
+  config.output.filename = 'assets/[name].[chunkHash].js'
 
   config.plugins = config.plugins.concat([
     new webpack.optimize.CommonsChunkPlugin({
@@ -67,7 +67,12 @@ if (DEBUG) {
       minChunks: isVendor,
     }),
     new WebpackMd5Hash(),
-    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
+    new webpack.optimize.UglifyJsPlugin({ 
+      compress: {
+        warnings: false
+      }, 
+      sourceMap: true 
+    }),
     new WebpackIsomorphicToolsPlugin(webpackIsomorphicToolsConfig),
   ])
 }

@@ -8,7 +8,7 @@
     "test": "cross-env NODE_ENV=test jest",
     "coverage": "npm test -- --coverage",
     "postcoverage": "opn coverage/lcov-report/index.html",
-    "lint": "eslint src src-clean .storybook",
+    "lint": "eslint src .storybook",
     "dev": "concurrently --kill-others \"nodemon --watch src\" \"node webpack/webpack-dev-server\"",
     "storybook": "BABEL_ENV=test start-storybook -p 9001 -c .storybook",
     "build:clean": "rimraf \"dist/!(.git*|Procfile)**\"",
