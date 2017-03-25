@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   
   @media only screen and (max-width: 500px) {
     display: block;
-    padding: 35px;
+    padding: 35px 15%;
   }
 `
 

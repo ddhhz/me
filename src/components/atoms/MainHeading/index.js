@@ -1,42 +1,109 @@
 import React, { PropTypes } from 'react'
-import styled, { css } from 'styled-components'
-import { font, palette } from 'styled-theme'
+import styled, { css, keyframes } from 'styled-components'
+import { font } from 'styled-theme'
 
 import { Blink } from 'components'
 
-const styles = css`
+const mainHeadingPlaceholderStyles = css`
+  display: inline-block;
+  padding: 0 30px;
   
-  margin: 0 0 50px;
-    
-  & a {
-    padding: 0 25px;
+  font-family: ${font('primary')};
+  font-weight: 100;
+  font-size: 85px;
+  visibility: hidden;
   
-    font-family: ${font('primary')};
-    font-weight: 100;
-    font-size: 85px;
-    text-decoration: none;
-    color: ${palette({ grayscale: 6 }, 1)};
-    
-    &:hover {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-    }
+  p {
+    display: inline-block;
+    margin: 0;
   }
   
   @media only screen and (max-width: 500px) {
-    &, & a {
-      font-size: 65px;
+    font-size: 65px;
+    padding: 0 5px;
+  }
+`
+
+const typingAnimation = keyframes`
+  0% { width: 0; }
+  100% { width: 271px; }
+`
+const typingMobileAnimation = keyframes`
+  0% { width: 0; }
+  100% { width: 208px; }
+`
+const mainHeadingRealDealStyles = css`
+  display: inline-block;
+  padding: 0 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  font-family: ${font('primary')};
+  font-weight: 100;
+  font-size: 85px;
+  color: #fff;
+  text-shadow: 0px 0px 50px #000;
+  
+  p {
+    display: inline-block;
+    margin: 0;
+    overflow: hidden;
+    float: left;
+    white-space: nowrap;
+    width: 0;
+    
+    animation-name: ${typingAnimation};
+    animation-duration: 1.25s
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+  }
+  
+  span {
+    float: left;
+  }
+  
+  @media only screen and (max-width: 500px) {
+    font-size: 65px;
+    padding: 0;
+    
+    p {
+      animation-name: ${typingMobileAnimation};
     }
   }
 `
 
+const mainHeadingStyles = css`
+  position: relative;
+  margin: 0 0 50px;
+`
+
+const MainHeadingPlaceholder = styled(({ text, ...props }) => {
+  return (
+    <a {...props}>
+      <p>{text}&nbsp;</p><Blink>&gt;_</Blink>
+    </a>
+  )
+})`${mainHeadingPlaceholderStyles}`
+
+const MainHeadingRealDeal = styled(({ text, ...props }) => {
+  return (
+    <a {...props} title="Wei He | LinkedIn" href="https://www.linkedin.com/in/towei" target="blank">
+      <p>{text}&nbsp;</p><Blink>&gt;_</Blink>
+    </a>
+  )
+})`${mainHeadingRealDealStyles}`
+
 const MainHeading = styled(({ level, children, reverse, palette, theme, ...props }) => {
   return (
-    <h1 {...props}>
-      <a title="Wei He | LinkedIn" href="https://www.linkedin.com/in/towei" target="blank">{children} <small>&gt;</small><Blink>_</Blink></a>
-    </h1>
+    <div {...props}>
+      <MainHeadingPlaceholder text={children} />
+      <MainHeadingRealDeal text={children} />
+    </div>
   )
-})`${styles}`
+})`${mainHeadingStyles}`
 
 MainHeading.propTypes = {
   level: PropTypes.number,
