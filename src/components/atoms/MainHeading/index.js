@@ -18,6 +18,10 @@ const mainHeadingPlaceholderStyles = css`
     margin: 0;
   }
   
+  small {
+    font-size: 60%;
+  }
+  
   @media only screen and (max-width: 475px) {
     font-size: 65px;
     padding: 0 5px;
@@ -45,7 +49,7 @@ const mainHeadingRealDealStyles = css`
   font-weight: 100;
   font-size: 85px;
   color: #fff;
-  text-shadow: 0px 0px 50px #000;
+  //text-shadow: 0px 0px 50px #000;
   
   user-select: none;
   
@@ -62,14 +66,15 @@ const mainHeadingRealDealStyles = css`
     white-space: nowrap;
     width: 0;
     
-    animation-name: ${typingAnimation};
-    animation-duration: 1.25s
-    animation-fill-mode: forwards;
-    animation-delay: 2s;
+    animation: ${typingAnimation} 1.25s forwards 2s;
   }
   
   span {
     float: left;
+  }
+  
+  small {
+    font-size: 60%;
   }
   
   @media only screen and (max-width: 475px) {
@@ -81,7 +86,7 @@ const mainHeadingRealDealStyles = css`
     }
     
     p {
-      animation-name: ${typingMobileAnimation};
+      animation: ${typingMobileAnimation} 1.25s forwards 2s;
     }
   }
 `
@@ -94,7 +99,7 @@ const mainHeadingStyles = css`
 const MainHeadingPlaceholder = styled(({ text, ...props }) => {
   return (
     <a {...props}>
-      <p>{text}&nbsp;</p><Blink>&gt;_</Blink>
+      <p>{text}&nbsp;</p><Blink><small>&gt;</small>_</Blink>
     </a>
   )
 })`${mainHeadingPlaceholderStyles}`
@@ -102,7 +107,7 @@ const MainHeadingPlaceholder = styled(({ text, ...props }) => {
 const MainHeadingRealDeal = styled(({ text, ...props }) => {
   return (
     <a {...props} title="Wei He | LinkedIn" href="https://www.linkedin.com/in/towei" target="blank">
-      <p>{text}&nbsp;</p><Blink>&gt;_</Blink>
+      <p>{text}&nbsp;</p><Blink><small>&gt;</small>_</Blink>
     </a>
   )
 })`${mainHeadingRealDealStyles}`
