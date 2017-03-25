@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { PageTemplate, MainHeading } from 'components'
+import { PageTemplate, MainHeading, LinkedInBadge } from 'components'
 
 const HomePage = () => {
   return (
-    <PageTemplate mainHeading={<MainHeading>Wei He</MainHeading>} />
+    <PageTemplate mainHeading={<MainHeading>Wei He</MainHeading>} body={<LinkedInBadge />} />
   )
 }
 

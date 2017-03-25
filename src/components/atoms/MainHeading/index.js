@@ -18,7 +18,7 @@ const mainHeadingPlaceholderStyles = css`
     margin: 0;
   }
   
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 475px) {
     font-size: 65px;
     padding: 0 5px;
   }
@@ -72,7 +72,7 @@ const mainHeadingRealDealStyles = css`
     float: left;
   }
   
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 475px) {
     font-size: 65px;
     padding: 0;
     
