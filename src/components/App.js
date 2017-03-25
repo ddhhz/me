@@ -5,6 +5,10 @@ import Helmet from 'react-helmet'
 import theme from './themes/default'
 
 injectGlobal`
+  html {
+    background: #275771 url("images/bg-home.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
   body {
     margin: 0;
     display: block !important;

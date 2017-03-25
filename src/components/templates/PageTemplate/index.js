@@ -7,8 +7,6 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-flow: column;
   min-height: 100vh;
-  background: #275771 url("images/bg-home.jpg") no-repeat center center fixed;
-  background-size: cover;
   padding: 50px 0;
   
   @media only screen and (max-width: 475px) {
