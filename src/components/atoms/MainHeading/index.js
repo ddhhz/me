@@ -47,6 +47,13 @@ const mainHeadingRealDealStyles = css`
   color: #fff;
   text-shadow: 0px 0px 50px #000;
   
+  user-select: none;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+  }
+  
   p {
     display: inline-block;
     margin: 0;
@@ -68,6 +75,10 @@ const mainHeadingRealDealStyles = css`
   @media only screen and (max-width: 500px) {
     font-size: 65px;
     padding: 0;
+    
+    &:hover {
+      background: none;
+    }
     
     p {
       animation-name: ${typingMobileAnimation};
