@@ -16,6 +16,7 @@ const Html = ({ styles, assets, state, content }) => {
         <style dangerouslySetInnerHTML={{ __html: styles }} />
       </head>
       <body style={{ display: 'none' }}>
+        <a href="https://blog.whe.me/" style={{ display: 'none' }}>Wei&apos;s Blog</a>
         <main id="app" dangerouslySetInnerHTML={{ __html: content }} />
         <script dangerouslySetInnerHTML={{ __html: state }} />
         {Object.keys(assets.javascript).reverse().map((key) =>
