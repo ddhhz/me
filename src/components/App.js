@@ -6,7 +6,7 @@ import theme from './themes/default'
 
 injectGlobal`
   html {
-    background: #275771 url("images/bg-home.jpg") no-repeat center center fixed;
+    background: #275771 url("images/bg-home.v1.jpg") no-repeat center center fixed;
     background-size: cover;
   }
   body {
