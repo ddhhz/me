@@ -25,11 +25,18 @@ const styles = css`
   
   div.LI-badge-container {
     background: rgba(255, 255, 255, 0.75);
+    width: 360px !important;
   }
   
   img.LI-field-icon {
     border-radius: 10%;
-    transform: scale(1.2);
+    transform: scale(1.2) translateX(2px);
+  }
+  
+  @media only screen and (max-width: 400px) {
+    div.LI-badge-container {
+      width: 280px !important;
+    }
   }
 `
 
