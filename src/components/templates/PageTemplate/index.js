@@ -7,11 +7,11 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-flow: column;
   min-height: 100vh;
-  padding: 50px 0;
+  padding: 0;
   
   @media only screen and (max-width: 475px) {
     display: block;
-    padding: 50px 10% 0;
+    padding: 0 10%;
   }
 `
 
@@ -20,6 +20,7 @@ const MainHeadingWrapper = styled.div`
   
   @media only screen and (max-width: 475px) {
     text-align: left;
+    margin-top: 50px;
   }
 `
 
