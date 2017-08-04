@@ -19,17 +19,12 @@ const typingMobileAnimation = keyframes`
 const mainHeadingRealDealStyles = css`
   display: inline-block;
   padding: 0 25px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   
   font-family: ${font('primary')};
   font-weight: 100;
   font-size: 85px;
   color: #fff;
-  //text-shadow: 0px 0px 50px #000;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, .5);
   
   user-select: none;
   
@@ -48,10 +43,13 @@ const mainHeadingRealDealStyles = css`
     }
     
     &.cursor {
+      width: 15px;
+      padding-right: 0;
       margin-top: 15px;
       margin-left: 0;
       background-color: rgba(255, 255, 255, 0.8);
       animation: ${blinkAnimation} 1.25s forwards 0s infinite;
+      box-shadow: 2px 2px 15px rgba(0, 0, 0, .5);
       font-size: 0.75em;
     }
   }
@@ -91,60 +89,8 @@ const mainHeadingRealDealStyles = css`
       }
       
       &.cursor {
-        margin-top: 10px;
-      }
-    }
-  }
-`
-
-
-const mainHeadingPlaceholderStyles = css`
-  display: inline-block;
-  padding: 0 30px;
-  
-  font-family: ${font('primary')};
-  font-weight: 100;
-  font-size: 85px;
-  visibility: hidden;
-  
-  small {
-    float: left;
-    padding-right: 15px;
-    line-height: 1.1em;
-    
-    sub {
-      font-size: 50px;
-    }
-    
-    &.cursor {
-      margin-top: 15px;
-      margin-left: 0;
-      font-size: 0.75em;
-    }
-  }
-  
-  p {
-    display: inline-block;
-    float: left;
-    margin: 0;
-  }
-  
-  small {
-    font-size: 60%;
-  }
-  
-  @media only screen and (max-width: 475px) {
-    font-size: 55px;
-    padding: 0 5px;
-    
-    small {
-      padding-right: 10px;
-      
-      sub {
-        font-size: 35px;
-      }
-      
-      &.cursor {
+        width: 12px;
+        padding-right: 0;
         margin-top: 10px;
       }
     }
@@ -155,14 +101,6 @@ const mainHeadingStyles = css`
   position: relative;
   margin: 0 0 50px;
 `
-
-const MainHeadingPlaceholder = styled(({ text, ...props }) => {
-  return (
-    <a {...props}>
-      <small><sub>&gt;</sub></small><p>{text}&nbsp;</p><small className="cursor">&nbsp;</small>
-    </a>
-  )
-})`${mainHeadingPlaceholderStyles}`
 
 const MainHeadingRealDeal = styled(({ text, ...props }) => {
   return (
@@ -175,7 +113,6 @@ const MainHeadingRealDeal = styled(({ text, ...props }) => {
 const MainHeading = styled(({ level, children, reverse, palette, theme, ...props }) => {
   return (
     <div {...props}>
-      <MainHeadingPlaceholder text={children} />
       <MainHeadingRealDeal text={children} />
     </div>
   )

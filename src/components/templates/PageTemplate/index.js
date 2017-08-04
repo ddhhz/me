@@ -19,7 +19,7 @@ const MainHeadingWrapper = styled.div`
   text-align: center;
   
   @media only screen and (max-width: 475px) {
-    text-align: left;
+    // text-align: left;
     margin-top: 50px;
   }
 `
