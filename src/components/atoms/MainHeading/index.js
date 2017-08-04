@@ -4,37 +4,17 @@ import { font } from 'styled-theme'
 
 import { Blink } from 'components'
 
-const mainHeadingPlaceholderStyles = css`
-  display: inline-block;
-  padding: 0 30px;
-  
-  font-family: ${font('primary')};
-  font-weight: 100;
-  font-size: 85px;
-  visibility: hidden;
-  
-  p {
-    display: inline-block;
-    margin: 0;
-  }
-  
-  small {
-    font-size: 60%;
-  }
-  
-  @media only screen and (max-width: 475px) {
-    font-size: 65px;
-    padding: 0 5px;
-  }
+const blinkAnimation = keyframes`
+  50% { opacity: 0.01; }
 `
 
 const typingAnimation = keyframes`
   0% { width: 0; }
-  100% { width: 271px; }
+  100% { width: 275px; }
 `
 const typingMobileAnimation = keyframes`
   0% { width: 0; }
-  100% { width: 208px; }
+  100% { width: 180px; }
 `
 const mainHeadingRealDealStyles = css`
   display: inline-block;
@@ -58,6 +38,24 @@ const mainHeadingRealDealStyles = css`
     border-radius: 10px;
   }
   
+  small {
+    float: left;
+    padding-right: 15px;
+    line-height: 1.1em;
+    
+    sub {
+      font-size: 50px;
+    }
+    
+    &.cursor {
+      margin-top: 15px;
+      margin-left: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      animation: ${blinkAnimation} 1.25s forwards 0s infinite;
+      font-size: 0.75em;
+    }
+  }
+  
   p {
     display: inline-block;
     margin: 0;
@@ -73,12 +71,8 @@ const mainHeadingRealDealStyles = css`
     float: left;
   }
   
-  small {
-    font-size: 60%;
-  }
-  
   @media only screen and (max-width: 475px) {
-    font-size: 65px;
+    font-size: 55px;
     padding: 0;
     
     &:hover {
@@ -87,6 +81,72 @@ const mainHeadingRealDealStyles = css`
     
     p {
       animation: ${typingMobileAnimation} 1.25s forwards 2s;
+    }
+    
+    small {
+      padding-right: 10px;
+      
+      sub {
+        font-size: 35px;
+      }
+      
+      &.cursor {
+        margin-top: 10px;
+      }
+    }
+  }
+`
+
+
+const mainHeadingPlaceholderStyles = css`
+  display: inline-block;
+  padding: 0 30px;
+  
+  font-family: ${font('primary')};
+  font-weight: 100;
+  font-size: 85px;
+  visibility: hidden;
+  
+  small {
+    float: left;
+    padding-right: 15px;
+    line-height: 1.1em;
+    
+    sub {
+      font-size: 50px;
+    }
+    
+    &.cursor {
+      margin-top: 15px;
+      margin-left: 0;
+      font-size: 0.75em;
+    }
+  }
+  
+  p {
+    display: inline-block;
+    float: left;
+    margin: 0;
+  }
+  
+  small {
+    font-size: 60%;
+  }
+  
+  @media only screen and (max-width: 475px) {
+    font-size: 55px;
+    padding: 0 5px;
+    
+    small {
+      padding-right: 10px;
+      
+      sub {
+        font-size: 35px;
+      }
+      
+      &.cursor {
+        margin-top: 10px;
+      }
     }
   }
 `
@@ -99,7 +159,7 @@ const mainHeadingStyles = css`
 const MainHeadingPlaceholder = styled(({ text, ...props }) => {
   return (
     <a {...props}>
-      <p>{text}&nbsp;</p><Blink><small>&gt;</small>_</Blink>
+      <small><sub>&gt;</sub></small><p>{text}&nbsp;</p><small className="cursor">&nbsp;</small>
     </a>
   )
 })`${mainHeadingPlaceholderStyles}`
@@ -107,7 +167,7 @@ const MainHeadingPlaceholder = styled(({ text, ...props }) => {
 const MainHeadingRealDeal = styled(({ text, ...props }) => {
   return (
     <a {...props} title="Wei He | LinkedIn" href="https://www.linkedin.com/in/towei" target="blank">
-      <p>{text}&nbsp;</p><Blink><small>&gt;</small>_</Blink>
+      <small><sub>&gt;</sub></small><p>{text}&nbsp;</p><small className="cursor">&nbsp;</small>
     </a>
   )
 })`${mainHeadingRealDealStyles}`

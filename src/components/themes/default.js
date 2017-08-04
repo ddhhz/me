@@ -15,7 +15,7 @@ theme.palette = {
 theme.reversePalette = reversePalette(theme.palette)
 
 theme.fonts = {
-  primary: 'Helvetica Neue, Helvetica, Roboto, sans-serif',
+  primary: 'Scope One',
   pre: 'Consolas, Liberation Mono, Menlo, Courier, monospace',
   quote: 'Georgia, serif',
 }
