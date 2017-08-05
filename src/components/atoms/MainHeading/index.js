@@ -18,7 +18,7 @@ const typingMobileAnimation = keyframes`
 `
 const mainHeadingRealDealStyles = css`
   display: inline-block;
-  padding: 0 25px;
+  padding: 10px 25px 0;
   
   font-family: ${font('primary')};
   font-weight: 100;
@@ -71,7 +71,7 @@ const mainHeadingRealDealStyles = css`
   
   @media only screen and (max-width: 475px) {
     font-size: 55px;
-    padding: 0;
+    padding: 10px 10px 0;
     
     &:hover {
       background: none;
