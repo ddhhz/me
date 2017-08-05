@@ -99,7 +99,7 @@ const mainHeadingRealDealStyles = css`
 
 const mainHeadingStyles = css`
   position: relative;
-  margin: 0 0 50px;
+  margin: 50px 0;
 `
 
 const MainHeadingRealDeal = styled(({ text, ...props }) => {
