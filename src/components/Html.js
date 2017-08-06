@@ -3,10 +3,10 @@ import React, { PropTypes } from 'react'
 import Helmet from 'react-helmet'
 
 const customCode = `
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+!function(W,e,i,H,E){W.GoogleAnalyticsObject=i;W[i]||(W[i]=function(){
+(W[i].q=W[i].q||[]).push(arguments)});W[i].l=+new Date;H=e.createElement('script');
+E=e.scripts[0];H.src='//www.google-analytics.com/analytics.js';
+E.parentNode.insertBefore(H,E)}(window,document,'ga');
 
 ga('create','UA-18952818-14','auto');
 ga('send','pageview');
