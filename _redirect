@@ -1,0 +1,3 @@
+http://whe.me/* https://whe.me/:splat 301!
+http://whe.netlify.com/* https://whe.me/:splat 301!
+https://whe.netlify.com/* https://whe.me/:splat 301!
