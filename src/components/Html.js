@@ -14,7 +14,7 @@ ga('send','pageview');
 !function(){var t;if(!(t=window.driftt=window.drift=window.driftt||[]).init)t.invoked?window.console&&console.error&&console.error("Drift snippet included twice."):(t.invoked=!0,t.methods=["identify","config","track","reset","debug","show","ping","page","hide","off","on"],t.factory=function(e){return function(){var n;return(n=Array.prototype.slice.call(arguments)).unshift(e),t.push(n),t}},t.methods.forEach(function(e){t[e]=t.factory(e)}),t.load=function(t){var e,n,i;i=3e5*Math.ceil(new Date/3e5),(n=document.createElement("script")).type="text/javascript",n.async=!0,n.crossorigin="anonymous",n.src="https://js.driftt.com/include/"+i+"/"+t+".js",(e=document.getElementsByTagName("script")[0]).parentNode.insertBefore(n,e)})}(),drift.SNIPPET_VERSION="0.3.1",drift.load("inhgwis639xz")
 `.replace(/\n/g, '')
 
-const Html = ({ styles, assets, state, content }) => {
+const Html = ({ styles, assets, state, content }) => {  // eslint-disable-line
   const helmet = Helmet.rewind()
   const attrs = helmet.htmlAttributes.toComponent()
 

@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import { font } from 'styled-theme'
 
-import { Blink } from 'components'
+// import { Blink } from 'components'
 
 const blinkAnimation = keyframes`
   50% { opacity: 0.01; }
