@@ -53,7 +53,7 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.18.1",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
